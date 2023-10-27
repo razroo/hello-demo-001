@@ -44,6 +44,9 @@
       ],
       "@hello-demo-001/data-models": [
         "libs/data-models/src/index.ts"
+      ],
+      "@hello-demo-001/common/common-environment": [
+        "libs/common/common-environment/src/index.ts"
       ]
     }
   },
