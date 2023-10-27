@@ -1,5 +1,21 @@
+<hello-demo-001-global-header
+  (sideNavToggle)="sideNavToggle()"
+></hello-demo-001-global-header>
 <div class="wrapper">
   <div class="container">
-    
+    <hello-demo-001-global-sidenav [opened]="sideNavOpen">
+      <mat-nav-list sidenav>
+        <a
+          mat-list-item
+          routerLinkActive="active-link"
+          routerLink="/"
+          (click)="sideNavToggle()"
+        >
+          <span class="App__sidenav-text">Home</span>
+        </a>
+      </mat-nav-list>
+      <router-outlet></router-outlet>
+    </hello-demo-001-global-sidenav>
   </div>
 </div>
+<hello-demo-001-global-footer> </hello-demo-001-global-footer>
