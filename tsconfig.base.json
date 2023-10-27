@@ -38,6 +38,9 @@
       ],
       "@hello-demo-001/data-services": [
         "libs/data-services/src/index.ts"
+      ],
+      "@hello-demo-001/data-graphql": [
+        "libs/data-graphql/src/index.ts"
       ]
     }
   },
