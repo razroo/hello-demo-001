@@ -32,6 +32,9 @@
       ],
       "@hello-demo-001/common/common-guards": [
         "libs/common/common-guards/src/index.ts"
+      ],
+      "@hello-demo-001/data-access": [
+        "libs/data-access/src/index.ts"
       ]
     }
   },
