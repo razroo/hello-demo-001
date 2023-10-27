@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from "@hello-demo-001/common/common-services";
 
 @Component({
   selector: 'hello-demo-001-root',
@@ -11,5 +12,16 @@ export class AppComponent {
 
   sideNavToggle(): void {
     this.sideNavOpen = !this.sideNavOpen;
+  }
+
+  constructor(private authService: AuthService) {
+  }
+
+  logIn() {
+    this.authService.loginWithRedirect()
+  }
+
+  signUp() {
+    this.authService.signUpWithRedirect();
   }
 }
