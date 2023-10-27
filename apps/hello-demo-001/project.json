@@ -1,0 +1,95 @@
+{
+  "name": "hello-demo-001",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/hello-demo-001/src",
+  "prefix": "hello-demo-001",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/hello-demo-001",
+        "index": "apps/hello-demo-001/src/index.html",
+        "main": "apps/hello-demo-001/src/main.ts",
+        "polyfills": "apps/hello-demo-001/src/polyfills.ts",
+        "tsConfig": "apps/hello-demo-001/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/hello-demo-001/src/favicon.ico",
+          "apps/hello-demo-001/src/assets"
+        ],
+        "styles": ["apps/hello-demo-001/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/hello-demo-001/src/environments/environment.ts",
+              "with": "apps/hello-demo-001/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "hello-demo-001:build:production"
+        },
+        "development": {
+          "browserTarget": "hello-demo-001:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "hello-demo-001:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/hello-demo-001/src/**/*.ts",
+          "apps/hello-demo-001/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/hello-demo-001"],
+      "options": {
+        "jestConfig": "apps/hello-demo-001/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
