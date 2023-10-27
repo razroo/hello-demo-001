@@ -41,6 +41,9 @@
       ],
       "@hello-demo-001/data-graphql": [
         "libs/data-graphql/src/index.ts"
+      ],
+      "@hello-demo-001/data-models": [
+        "libs/data-models/src/index.ts"
       ]
     }
   },
