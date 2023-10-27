@@ -35,6 +35,9 @@
       ],
       "@hello-demo-001/data-access": [
         "libs/data-access/src/index.ts"
+      ],
+      "@hello-demo-001/data-services": [
+        "libs/data-services/src/index.ts"
       ]
     }
   },
